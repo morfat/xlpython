@@ -1,12 +1,10 @@
-# excel class requires xlrd package installed.so install xlrd first befor using this package
-
+The Excel class requires xlrd package installed.so install xlrd first before using this package
 This class is for processing excel files using python. it is simple and straight forward
-
 #use it like this
 
+from xlpython.excel import Excel 
 excel=Excel("/path/to/excelfile.xlsx",sheet_number)#sheet number is integer
 excel.process(start_row)#call the process method with row to start in the excel
-
 #the process method can be overridden as the example below:
 
     def process(self,start_row):
@@ -27,6 +25,5 @@ excel.process(start_row)#call the process method with row to start in the excel
             
              
                     
-
 
 
