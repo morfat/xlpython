@@ -27,17 +27,17 @@ excel.process(start_row)#call the process method with row to start in the excel
             
 #for Django users:
 
-from xlpython.excel import Excel
-""" get then excel from Django forms """
-excel=request.FILES['excel_file'] 
-""" we need to pass the sheet number and excel file as below """
-excel=Excel(1,file_contents=excel.read()) 
-""" then process your excel in a loop or how you want it """
-
-for row_num in range((0, excel.get_total_rows()): """ we start from 0  if no headers in excel else 1"""
-            row = excel.get_row(row_num)
-            #to get row's  column values
-            column_val=excel.sanitize(row[0])# first column is 0
+    from xlpython.excel import Excel
+    """ get then excel from Django forms """
+    excel=request.FILES['excel_file'] 
+    """ we need to pass the sheet number and excel file as below """
+    excel=Excel(1,file_contents=excel.read()) 
+    """ then process your excel in a loop or how you want it """
+    for row_num in range((0, excel.get_total_rows()): 
+        """ we start from 0  if no headers in excel else 1"""
+                row = excel.get_row(row_num)
+                #to get row's  column values
+                column_val=excel.sanitize(row[0])# first column is 0
             #if column is date
             date_val=excel.get_date(row[0])
             #if column is time
